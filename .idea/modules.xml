@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple_Search_Engine.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple_Search_Engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple Search Engine/task/Simple_Search_Engine.Simple_Search_Engine-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple Search Engine/task/Simple_Search_Engine.Simple_Search_Engine-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple Search Engine/task/Simple_Search_Engine.Simple_Search_Engine-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple Search Engine/task/Simple_Search_Engine.Simple_Search_Engine-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Simple Search Engine/task/Simple_Search_Engine.Simple_Search_Engine-task.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Simple Search Engine/task/Simple_Search_Engine.Simple_Search_Engine-task.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Find a value's index/Simple_Search_Engine.Topics-Algorithms_in_Java-Find_a_value's_index.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Find a value's index/Simple_Search_Engine.Topics-Algorithms_in_Java-Find_a_value's_index.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Find a value's index/Simple_Search_Engine.Topics-Algorithms_in_Java-Find_a_value's_index.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Find a value's index/Simple_Search_Engine.Topics-Algorithms_in_Java-Find_a_value's_index.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Find a value's index/Simple_Search_Engine.Topics-Algorithms_in_Java-Find_a_value's_index.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Find a value's index/Simple_Search_Engine.Topics-Algorithms_in_Java-Find_a_value's_index.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Theory/Simple_Search_Engine.Topics-Algorithms_in_Java-Theory.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Theory/Simple_Search_Engine.Topics-Algorithms_in_Java-Theory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Theory/Simple_Search_Engine.Topics-Algorithms_in_Java-Theory.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Theory/Simple_Search_Engine.Topics-Algorithms_in_Java-Theory.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Theory/Simple_Search_Engine.Topics-Algorithms_in_Java-Theory.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Topics/Algorithms in Java/Theory/Simple_Search_Engine.Topics-Algorithms_in_Java-Theory.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Simple_Search_Engine.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Simple_Search_Engine.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Simple_Search_Engine.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Simple_Search_Engine.util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Simple_Search_Engine.util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Simple_Search_Engine.util.test.iml" />
+    </modules>
+  </component>
+</project>
