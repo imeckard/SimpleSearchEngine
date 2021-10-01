@@ -16,24 +16,26 @@ public class Main {
             }
         }
 
+        assert filePath != null;
         File inputFile = new File(filePath);
 
         List<String> inputs = new ArrayList<>();
 
-        assert filePath != null;
         try (Scanner fileScan = new Scanner(inputFile)) {
             while (fileScan.hasNext()) {
                 inputs.add(fileScan.nextLine());
             }
         }
 
+        Map<String, List<Integer>> indexedMap = indexByWord(inputs);
+
         while (true) {
             showMenu();
             switch (scan.nextLine()) {
                 case "1":
                     System.out.println("Enter a name or email to search all suitable people.");
-                    String query = scan.nextLine();
-                    printSearchResults(inputs, query);
+                    String query = scan.nextLine().toLowerCase();
+                    printSearchResults(indexedMap, inputs, query);
                     break;
                 case "2":
                     printAll(inputs);
@@ -47,18 +49,16 @@ public class Main {
         }
     }
 
-    public static void printSearchResults(List<String> inputLines, String query) {
-        boolean isFound = false;
-        for (String line : inputLines) {
-            String lowerLine = line.toLowerCase();
-            if (lowerLine.contains(query.toLowerCase())) {
-                System.out.println(line);
-                isFound = true;
+    public static void printSearchResults(Map<String, List<Integer>> indexedMap, List<String> inputs, String query) {
+        if (indexedMap.containsKey(query)) {
+            System.out.println(indexedMap.get(query).size() + " persons found:");
+            for (Integer x : indexedMap.get(query)) {
+                System.out.println(inputs.get(x));
             }
+        } else {
+            System.out.println("No matching people found");
         }
-        if (!isFound) {
-            System.out.println("No matches");
-        }
+
     }
 
     public static void showMenu() {
@@ -74,5 +74,19 @@ public class Main {
         for (String line : inputLines) {
             System.out.println(line);
         }
+    }
+
+    public static Map<String, List<Integer>> indexByWord(List<String> inputs) {
+        Map<String, List<Integer>> indexedMap = new TreeMap<>();
+        for (int i = 0; i < inputs.size(); i++) {
+            String[] tempString = inputs.get(i).toLowerCase().split(" ");
+            for (int k = 0; k < tempString.length; k++) {
+                if (!indexedMap.containsKey(tempString[k]) || indexedMap.get(tempString[k]).contains(i)) {
+                    indexedMap.putIfAbsent(tempString[k], new ArrayList<>());
+                }
+                indexedMap.get(tempString[k]).add(i);
+            }
+        }
+        return indexedMap;
     }
 }
