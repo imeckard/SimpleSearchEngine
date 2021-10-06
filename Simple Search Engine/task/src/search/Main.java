@@ -33,6 +33,7 @@ public class Main {
             showMenu();
             switch (scan.nextLine()) {
                 case "1":
+                    System.out.println("Select a matching strategy: ALL, ANY, NONE");
                     System.out.println("Enter a name or email to search all suitable people.");
                     String query = scan.nextLine().toLowerCase();
                     printSearchResults(indexedMap, inputs, query);
@@ -88,5 +89,12 @@ public class Main {
             }
         }
         return indexedMap;
+    }
+
+    public static void printSearchResults(List<String> inputs, List<Integer> indexes) {
+        for (Integer index : indexes) {
+            System.out.println(inputs.get(index));
+        }
+
     }
 }
