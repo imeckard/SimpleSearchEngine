@@ -8,7 +8,7 @@ public class Main {
 
     public static Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws Exception {
         String filePath = null;
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("--data")) {
@@ -33,10 +33,26 @@ public class Main {
             showMenu();
             switch (scan.nextLine()) {
                 case "1":
+                    SearchMode chosenMode = null;
                     System.out.println("Select a matching strategy: ALL, ANY, NONE");
-                    System.out.println("Enter a name or email to search all suitable people.");
-                    String query = scan.nextLine().toLowerCase();
-                    printSearchResults(indexedMap, inputs, query);
+                    switch (scan.nextLine().toLowerCase()) {
+                        case "any":
+                            chosenMode = new SearchAny();
+                            break;
+                        case "all":
+                            chosenMode = new SearchAll();
+                            break;
+                        case "none":
+                            chosenMode = new SearchNone();
+                            break;
+                        default:
+                            System.out.println("Please select a strategy.");
+                    }
+                    if (chosenMode != null) {
+                        System.out.println("Enter a name or email to search all suitable people.");
+                        String[] query = scan.nextLine().toLowerCase().split(" ");
+                        printSearchResults(inputs, chosenMode.Search(indexedMap, query));
+                    }
                     break;
                 case "2":
                     printAll(inputs);
@@ -50,7 +66,7 @@ public class Main {
         }
     }
 
-    public static void printSearchResults(Map<String, List<Integer>> indexedMap, List<String> inputs, String query) {
+/*    public static void printSearchResults(Map<String, List<Integer>> indexedMap, List<String> inputs, String query) {
         if (indexedMap.containsKey(query)) {
             System.out.println(indexedMap.get(query).size() + " persons found:");
             for (Integer x : indexedMap.get(query)) {
@@ -60,7 +76,7 @@ public class Main {
             System.out.println("No matching people found");
         }
 
-    }
+    }*/
 
     public static void showMenu() {
         System.out.println("=== Menu ===\n" +
@@ -92,9 +108,12 @@ public class Main {
     }
 
     public static void printSearchResults(List<String> inputs, List<Integer> indexes) {
-        for (Integer index : indexes) {
-            System.out.println(inputs.get(index));
+        if (indexes.size() == 0) {
+            System.out.println("No matching people found");
+        } else {
+            for (Integer index : indexes) {
+                System.out.println(inputs.get(index));
+            }
         }
-
     }
 }

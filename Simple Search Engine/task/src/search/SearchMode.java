@@ -17,7 +17,7 @@ class SearchAll extends SearchMode {
         List<Integer> commonIndexes = new ArrayList<>();
         for (String word : query) {
             if (!indexedMap.containsKey(word)) {
-                throw new Exception("No matching people found");
+                break;
             } else {
                 if (commonIndexes.size() == 0) {
                     commonIndexes = indexedMap.get(word);
@@ -44,9 +44,9 @@ class SearchAny extends SearchMode {
                 }
             }
         }
-        if (commonIndexes.size() == 0) {
+/*        if (commonIndexes.size() == 0) {
             throw new Exception("No matching people found");
-        }
+        }*/
         return commonIndexes;
     }
 }
@@ -77,9 +77,9 @@ class SearchNone extends SearchMode {
         for (Integer index : uncommonIndexes) {
             commonIndexes.remove(index);
         }
-        if (commonIndexes.size() == 0) {
+/*        if (commonIndexes.size() == 0) {
             throw new Exception("No matching people found");
-        }
+        }*/
         return commonIndexes;
     }
 }
